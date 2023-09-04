@@ -28,6 +28,7 @@ function App() {
           item={listitem} 
           deleteItem={deleteListItem}/>
         )
+        
       })}
       </div>
       
