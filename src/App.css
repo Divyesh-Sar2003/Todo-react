@@ -75,6 +75,7 @@ box-shadow: 2px 2px 1px 1px;
     font-family: 'Poppins',sans-serif;
     font-size: 20px;
     font-weight: 400;
+    text-transform: capitalize;
 }
 /* .task button{
     background-color: #6583e5;
@@ -100,7 +101,9 @@ box-shadow: 2px 2px 1px 1px;
 }
 button:hover{
   box-shadow: 1px 1px 1px 1px;
-
+}
+#tasks button .icon-delete:hover{
+    background-color: red;
 }
 #main{
   background-color: #ffffff;

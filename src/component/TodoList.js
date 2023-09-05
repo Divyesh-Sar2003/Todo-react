@@ -8,8 +8,10 @@ function TodoList(props) {
           props.deleteItem(props.index);
           alert("Task is deleted")
         }}><i className="fa-solid fa-trash-can  icon-delete"></i></button>
-        <button>
-        <i className="fa-solid fa-square-pen icon"></i>
+        <button onClick={e=>{
+          props.editItem(props.item);
+        }}>
+        <i className="fa-solid fa-square-pen"></i>
         </button>       
     </div>
   )
