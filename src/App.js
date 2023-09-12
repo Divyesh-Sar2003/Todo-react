@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./App.css"
 import Todoinput from './component/Todoinput'
 import TodoList from './component/TodoList';
-import TodoEdit from './component/TodoEdit'
+// import TodoEdit from './component/TodoEdit'
 function App() {
   const [listTodo,setListTodo] = useState([]);
   let addList = (inputText)=>{
@@ -10,41 +10,62 @@ function App() {
       alert('please add some task')
     }
     else{
-      // const allData =  {id: new Date().getTime().toString()}
-      setListTodo([...listTodo,inputText]);
-      // console.log(allData.id);
+      const index =  {id: new Date().getTime().toString()}
+      const task ={
+          id:index.id,
+          value:inputText
+      }
+      setListTodo([...listTodo,task]);
     }
   }
+  // console.log(listTodo);
+
   const deleteListItem = (key)=>{
     let newListTodo = [...listTodo];
     newListTodo.splice(key,1)
     setListTodo([...newListTodo])
+    console.log(key);
   }
-  const [EditItem , SetEditItem] = useState([]);
-  const editListItem = (key) =>{
-    console.log(EditItem,key.index);
-    SetEditItem([...EditItem,key]);
+  // const [EditItem , SetEditItem] = useState([]);
+  let keyid ;
+  const [Value,setValue] = useState('');
+  const editListItem = (key,value) =>{
+    console.log("key from list",key,value);
+    keyid = key;
+    let val = value;
+    console.log('val::', val);
+    setValue(val, keyid)
+    console.log('value ::', Value);
   }
-   const editItem = (inputText) =>{
-      console.log(inputText);
-      setListTodo([...listTodo,inputText]);
-   }
-
+  const editedList = (newValue) =>{
+    const editedTaskList = listTodo.map((listitem) =>{
+      if(keyid === listitem.id){
+        return{...listitem,value:newValue};
+      }
+      return listitem
+    })
+    setListTodo(editedTaskList);
+    setValue("");
+  }
+//   changeStyles = () => {
+//     let element = document.getElementById('edittask')
+//     ReactDOM.findDOMNode(element).style.display = this.state.isClicked?'none' : 'block'
+// }
   return (
     <>
     <div className="container">
       <h1 className="text-center">To-DO List</h1>
-      <Todoinput addList={addList}/>
-      <TodoEdit 
-      EditName={EditItem}
-      updateList={editItem}/>
+      <Todoinput addList={addList}  EditName={Value} updateList={editedList}
+      className='dis_block'/>
+    
       <div className='main'>
       {listTodo.map((listitem,i)=>{
         return(
-          <TodoList key={i} index={i} 
+          <TodoList key={i} index={i}
           item={listitem} 
           deleteItem={deleteListItem}
-          editItem={editListItem}/>
+          editItem={editListItem}
+          />
         )
         
       })}
