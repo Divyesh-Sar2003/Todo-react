@@ -10,6 +10,9 @@ function TodoList(props) {
         }}><i className="fa-solid fa-trash-can  icon-delete"></i></button>
         <button onClick={e=>{
           props.editItem(props.item);
+          // props.updateListIndex(props.index);
+          // props.editItem(props.index);
+
         }}>
         <i className="fa-solid fa-square-pen"></i>
         </button>       

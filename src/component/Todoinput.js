@@ -20,14 +20,7 @@ function Todoinput(props) {
               setInputText("")
             }}>Add</button>
         </div>
-        {/* <div id="tasks">
-          <ul className='task'>
-            <span>{inputText}</span>
-            <button className='btn btn-danger'>Delete</button>
-          </ul>
-          
-        </div> */
-        }
+        
     </>
 
   )

@@ -56,9 +56,6 @@ box-shadow: 2px 2px 1px 1px;
     background-color: #ffffff;
     padding: 30px 20px;
     margin-top: 10px;
-}
-
-#tasks{
     align-items: center;
     justify-content: space-between;
     border: 1px solid #939697;
@@ -77,17 +74,7 @@ box-shadow: 2px 2px 1px 1px;
     font-weight: 400;
     text-transform: capitalize;
 }
-/* .task button{
-    background-color: #6583e5;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    height: 100%;
-    width: 10%;
-    border-radius: 5px;
-} */
-#tasks button{
+ button{
   border: none;
   background-color:transparent;
  float: right;
@@ -115,8 +102,49 @@ button:hover{
  }
  .main{
   border: 1px solid black;
-  padding: 10px;
+  /* padding: 10px; */
     background-color: #ffffff;
   border-radius: 10px;
   height: 30%;
  }
+ #edittask{
+    position: relative;
+    padding: 30px 20px;
+    /* display: none; */
+}
+#edittask input{
+    width: 75%;
+    height: 45px;
+    padding: 12px;
+    color: #111111;
+    font-weight: 500;
+    position: relative;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    border: 2px solid #d1d3d4;
+}
+#edittask input:hover{
+box-shadow: 2px 2px 1px 1px;
+
+}
+
+#edittask input:focus{
+    outline: none;
+    border-color: #0d75ec;
+}
+#edittask button{
+    position: relative;
+    float: right;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #0d75ec;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    width: 20%;
+    height: 45px;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+}
