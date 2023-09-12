@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import "./App.css"
 import Todoinput from './component/Todoinput'
 import TodoList from './component/TodoList';
-// import TodoEdit from './component/TodoEdit'
 function App() {
   const [listTodo,setListTodo] = useState([]);
   let addList = (inputText)=>{
@@ -18,7 +17,6 @@ function App() {
       setListTodo([...listTodo,task]);
     }
   }
-  // console.log(listTodo);
 
   const deleteListItem = (key)=>{
     let newListTodo = [...listTodo];
@@ -26,7 +24,6 @@ function App() {
     setListTodo([...newListTodo])
     console.log(key);
   }
-  // const [EditItem , SetEditItem] = useState([]);
   let keyid ;
   const [Value,setValue] = useState('');
   const editListItem = (key,value) =>{
@@ -47,10 +44,6 @@ function App() {
     setListTodo(editedTaskList);
     setValue("");
   }
-//   changeStyles = () => {
-//     let element = document.getElementById('edittask')
-//     ReactDOM.findDOMNode(element).style.display = this.state.isClicked?'none' : 'block'
-// }
   return (
     <>
     <div className="container">
